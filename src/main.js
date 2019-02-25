@@ -11,9 +11,10 @@ import './styles/common.css'
 // 引入vant所有的css
 import 'vant/lib/index.css';
 //按需引入vant 
-import {Button, Swipe, SwipeItem ,Tabbar, TabbarItem,NavBar,Icon,Row, Col } from 'vant';
+
+import {Button, Swipe, SwipeItem ,Tabbar, TabbarItem,NavBar,Icon,Tab, Tabs,Row,col} from 'vant';
 Vue.use(Button).use(Swipe).use(SwipeItem).use(Tabbar).use(TabbarItem).use(NavBar).use(Icon)
-.use(Row).use(Col)
+.use(Tab).use(Tabs).use(Row).use(Col);
 
 Vue.config.productionTip = false
 
