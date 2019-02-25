@@ -5,7 +5,7 @@ Vue.use(Router)
 
 let router=new Router({
   routes: [
-   
+    
   ]
 })
 
