@@ -6,6 +6,9 @@ import store from './store'
 //引入api
 import './api/index'
 
+//  引入vue-scroller 插件
+import VueScroller from 'vue-scroller'
+Vue.use(VueScroller)
 //引入样式初始化
 import './styles/common.css'
 // 引入vant所有的css
