@@ -1,12 +1,13 @@
 <template>
   <div class="GoodsCategories-container">
-    <van-tabs  @click="onClick">
-      <van-tab  v-for="(item) in categories" :key="item.id" :title="item.name">
+    <van-tabs>
+      <van-tab  v-for="(item) in categories" :key="item.id">
+          <div slot="title" @click='getSubCategories(item.id)'>{{item.name}}</div>
         <ul class="item-container">
-          <li v-for="(item) in subCategories" :key="item.id">
+          <router-link :to="'/goodslist/?id='+item.id+'&title='+item.name" tag="li" v-for="(item) in subCategories" :key="item.id">
             <img :src="item.img" alt="">
             <span class="title">{{item.name}}</span>
-          </li>
+          </router-link>
         </ul>
       </van-tab>
     </van-tabs>
@@ -33,23 +34,19 @@ export default {
       })
     },
     getSubCategories(id){
-      console.log(id)
-      this.$axios.get('/goods/getGoodsSubCategories/'+id,{page:1,pageSize:10}).then( result => {
+      this.$axios.get('/goods/getGoodsSubCategories/'+id).then( result => {
         if(result.status === 200){
-          this.subCategories =[]
           this.subCategories = result.data.data
         }
       })
     },
-      onClick(index, title) {
-      this.getSubCategories(index+1)
-    }
   }
 };
 </script>
 
 <style lang="less">
   .GoodsCategories-container{
+    padding-bottom: 40px;
     .van-tabs {
       margin-bottom: 10px;
     }
