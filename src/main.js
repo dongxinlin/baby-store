@@ -3,6 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 
+//定义tabBar全局组件
+
+import tabBar from './components/tabBar'
+Vue.component('tabBar',tabBar)
+
 //引入api
 import './api/index'
 
@@ -12,9 +17,9 @@ import './styles/common.css'
 import 'vant/lib/index.css';
 //按需引入vant 
 
-import {Button, Swipe, SwipeItem ,Tabbar, TabbarItem,NavBar,Icon,Tab, Tabs,Row,col} from 'vant';
+import {Button, Swipe, SwipeItem ,Tabbar, TabbarItem,NavBar,Icon,Tab, Tabs,Row,Col,List} from 'vant';
 Vue.use(Button).use(Swipe).use(SwipeItem).use(Tabbar).use(TabbarItem).use(NavBar).use(Icon)
-.use(Tab).use(Tabs).use(Row).use(Col);
+.use(Tab).use(Tabs).use(Row).use(Col).use(List)
 
 Vue.config.productionTip = false
 

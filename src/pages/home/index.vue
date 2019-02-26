@@ -2,7 +2,7 @@
     <div class="home-container" >
      <van-row type="flex" justify="space-between" align="center">
         <van-col span="3">
-            <router-link to="/getGoodsCategories">
+            <router-link to="/classify">
                  <van-icon name="label-o" size="18px" />
             </router-link>
         </van-col>
@@ -23,6 +23,8 @@
             <p>{{item.name}}</p>
         </li>
     </ul>
+
+    <tabBar></tabBar>
     </div>
 </template>
 <script>
